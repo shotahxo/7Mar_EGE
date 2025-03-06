@@ -1,0 +1,44 @@
+s = open('24.txt').readline().strip()
+
+while '++' in s or '**' in s or '+*' in s or '*+' in s or '+01' in s or '*01' in s or '+02' in s or '*03' in s or '+04' in s or '*04' in s or '+05' in s or '*05' in s or '+06' in s or '*06' in s or '+07' in s or '*07' in s or '+08' in s or '*08' in s or '+09' in s or '*09' in s:
+    s=s.replace('++', ' ')
+    s = s.replace('**', ' ')
+    s = s.replace('+*', ' ')
+    s = s.replace('*+', ' ')
+    s = s.replace('+01', '1')
+    s = s.replace('*01', '1')
+    s = s.replace('+02', '2')
+    s = s.replace('*02', '2')
+    s = s.replace('+03', '3')
+    s = s.replace('*03', '3')
+    s = s.replace('+04', '4')
+    s = s.replace('*04', '4')
+    s = s.replace('+05', '5')
+    s = s.replace('*05', '5')
+    s = s.replace('+06', '6')
+    s = s.replace('*06', '6')
+    s = s.replace('+07', '7')
+    s = s.replace('*07', '7')
+    s = s.replace('+08', '8')
+    s = s.replace('*08', '8')
+    s = s.replace('+09', '9')
+    s = s.replace('*09', '9')
+
+
+
+s=s.split()
+a=[]
+for i in range(len(s)):
+    if s[i][0]=='*' or s[i][0]=='+' or s[i][-1]=='+' or s[i][-1]=='*':
+        pass
+    else:
+        a.append(s[i])
+# print(a)
+mx=-10**20
+
+for i in range(len(a)):
+    if eval(a[i])==0:
+        print(a[i])
+        mx=max(mx,len(a[i]))
+print(mx)
+# Ответ: 99
