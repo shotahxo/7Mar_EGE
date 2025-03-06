@@ -1,0 +1,53 @@
+#19
+def f(a,p):
+    if a<=19 and p==3:
+        return True
+    if a<=19 and p==2:
+        return False
+    if a>19 and p==3:
+        return False
+    if p%2==1:
+        return f(a-2,p+1) and f(a-5,p+1) and f(a//3,p+1)
+    if p%2==0:
+        return f(a-2,p+1) or f(a-5,p+1) or f(a//3,p+1)
+
+for s in range(20,100):
+    if f(s,1)==True:
+        print(s)
+# Ответ: 60
+
+#20
+def f(a,p):
+    if a<=19 and p==4:
+        return True
+    if a<=19 and p==3:
+        return False
+    if a>19 and p==4:
+        return False
+    if p%2==1:
+        return f(a-2,p+1) or f(a-5,p+1) or f(a//3,p+1)
+    if p%2==0:
+        return f(a-2,p+1) and f(a-5,p+1) and f(a//3,p+1)
+
+for s in range(20,100):
+    if f(s,1)==True:
+        print(s)
+# Ответ: 62 63
+
+#21
+def f(a,p):
+    if a<=19 and (p==3 or p==5):
+        return True
+    if a<=19 and (p==2 or p==4):
+        return False
+    if a>19 and p==5:
+        return False
+    if p%2==1:
+        return f(a-2,p+1) and f(a-5,p+1) and f(a//3,p+1)
+    if p%2==0:
+        return f(a-2,p+1) or f(a-5,p+1) or f(a//3,p+1)
+
+for s in range(20,100):
+    if f(s,1)==True:
+        print(s)
+# Ответ: 64
