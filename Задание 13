@@ -1,0 +1,13 @@
+from ipaddress import *
+
+ip = '172.16.168.0'
+mask = '255.255.248.0'
+
+k=0
+net = ip_network(f'{ip}/{mask}',0)
+for x in net:
+    x=bin(int(x))[2:]
+    if x.count('1')%5!=0:
+        k+=1
+print(k)
+# Ответ: 1663
