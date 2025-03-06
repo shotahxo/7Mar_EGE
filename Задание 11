@@ -1,0 +1,9 @@
+from math import *
+l=23
+n = 500000
+I = 21*1024*1024*8
+
+i = round(I/(n*l))
+N=2**i
+print(N)
+# Ответ: 32768
