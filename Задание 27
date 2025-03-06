@@ -1,0 +1,128 @@
+#27A
+from math import dist
+s = open('27A.txt').readlines()
+
+
+for i in range(len(s)):
+    s[i]=s[i].replace(',','.')
+    s[i] = s[i].split()
+    s[i][0] = float(s[i][0])
+    s[i][1] = float(s[i][1])
+# print(s)
+
+k1 = []
+k2 = []
+
+for i in range(len(s)):
+    x,y = s[i]
+    if y<3:
+        k1.append(s[i])
+    else:
+        k2.append(s[i])
+# print(len(k1),len(k2))
+
+
+
+x1 = 0
+y1 = 0
+mnk1 = 10**20
+for i in range(len(k1)):
+    t1 = k1[i]
+    sm = 0
+    for j in range(len(k1)):
+        t2 = k1[j]
+        sm+=dist(t1,t2)
+    if sm<mnk1:
+        mnk1=sm
+        x1=t1[0]
+        y1=t1[1]
+# print(x1,y1)
+
+x2 = 0
+y2 = 0
+mnk2 = 10**20
+for i in range(len(k2)):
+    t1 = k2[i]
+    sm = 0
+    for j in range(len(k2)):
+        t2 = k2[j]
+        sm+=dist(t1,t2)
+    if sm<mnk2:
+        mnk2=sm
+        x2=t1[0]
+        y2=t1[1]
+# print(x2,y2)
+
+Px = abs(((x1+x2)/2)*10000)
+Py = abs(((y1+y2)/2)*10000)
+print(Px,Py)
+
+#27B
+from math import dist
+s = open('27B.txt').readlines()
+
+for i in range(len(s)):
+    s[i]=s[i].replace(',','.')
+    s[i]=s[i].split()
+    s[i][0]=float(s[i][0])
+    s[i][1]=float(s[i][1])
+# print(s)
+k1 = []
+k2 = []
+k3 = []
+for i in range(len(s)):
+    x,y=s[i]
+    if y<3:
+        k1.append(s[i])
+    if y>3 and y<7:
+        k2.append(s[i])
+    if y>7:
+        k3.append(s[i])
+# print(len(k1),len(k2),len(k3))
+
+x1 = 0
+y1 = 0
+mnk1 = 10**20
+for i in range(len(k1)):
+    t1 = k1[i]
+    sm = 0
+    for j in range(len(k1)):
+        t2 = k1[j]
+        sm+=dist(t1,t2)
+    if sm<mnk1:
+        mnk1=sm
+        x1=t1[0]
+        y1=t1[1]
+# print(x1,y1)
+x2 = 0
+y2 = 0
+mnk2 = 10**20
+for i in range(len(k2)):
+    t1 = k2[i]
+    sm = 0
+    for j in range(len(k2)):
+        t2 = k2[j]
+        sm+=dist(t1,t2)
+    if sm<mnk2:
+        mnk2=sm
+        x2=t1[0]
+        y2=t1[1]
+# print(x2,y2)
+x3 = 0
+y3 = 0
+mnk3 = 10**20
+for i in range(len(k3)):
+    t1 = k3[i]
+    sm = 0
+    for j in range(len(k3)):
+        t2 = k3[j]
+        sm+=dist(t1,t2)
+    if sm<mnk3:
+        mnk3=sm
+        x3=t1[0]
+        y3=t1[1]
+# print(x3,y3)
+
+Px = abs(((x1+x2+x3)/3)*10000)
+Py = abs(((y1+y2+y3)/3)*10000)
+print(Px,Py)
