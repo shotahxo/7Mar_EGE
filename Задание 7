@@ -1,0 +1,13 @@
+from math import *
+k = 1280*720
+N = 4096
+v = 96468992
+t = 280
+
+i = ceil(log2(N))
+I1 = k*i
+Ip = v*t
+
+no = Ip/I1
+print(ceil(no))
+# Ответ: 2443
